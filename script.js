@@ -11,6 +11,11 @@ function displayTotal(total) {
   pipDisplay.innerHTML = "Total Pips : " + total;
 }
 
+function displayCardsRequired(type, typeId) {
+  const cardsRequired = document.getElementById(typeId);
+  cardsRequired.innerHTML = "Cards required : " + type;
+}
+
 function cardsNeeded(pip, total, required) {
   let numberOfCards = Math.ceil(pip/total*required);
 
@@ -27,8 +32,10 @@ function submitCalc(event) {
   let plainsPip = parseFloat(plainsPipCount.value);
   let required = parseFloat(requiredCount.value);
   let total = parseFloat(sumPips(swampPip, forestPip, islandPip, mountainPip, plainsPip));
+
+  let swampCards = cardsNeeded(swampPip, total, required);
   
-  console.log(cardsNeeded(swampPip, total, required));
+  displayCardsRequired(swampCards, "swampRequired");
   displayTotal(total);
 }
 

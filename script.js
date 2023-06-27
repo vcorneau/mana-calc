@@ -17,7 +17,7 @@ function displayCardsRequired(type, typeId) {
 }
 
 function cardsNeeded(pip, total, required) {
-  let numberOfCards = Math.ceil(pip/total*required);
+  let numberOfCards = Math.floor(pip/total*required);
 
   return numberOfCards;
 }
@@ -34,8 +34,16 @@ function submitCalc(event) {
   let total = parseFloat(sumPips(swampPip, forestPip, islandPip, mountainPip, plainsPip));
 
   let swampCards = cardsNeeded(swampPip, total, required);
+  let forestCards = cardsNeeded(forestPip, total, required);
+  let islandCards = cardsNeeded(islandPip, total, required);
+  let mountainCards = cardsNeeded(mountainPip, total, required);
+  let plainsCards = cardsNeeded(plainsPip, total, required);
   
   displayCardsRequired(swampCards, "swampRequired");
+  displayCardsRequired(forestCards, "forestRequired");
+  displayCardsRequired(islandCards, "islandRequired");
+  displayCardsRequired(mountainCards, "mountainRequired");
+  displayCardsRequired(plainsCards, "plainsRequired");
   displayTotal(total);
 }
 

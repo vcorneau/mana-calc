@@ -1,0 +1,19 @@
+.mana {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 5px;
+
+}
+
+.icons {
+  height: 30px;
+  width: 30px;
+}
+
+.pipCount {
+  height: 30px;
+  width: 60px;
+  border-radius: 20px;
+  margin: 10px;
+}

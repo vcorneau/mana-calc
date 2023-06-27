@@ -1,12 +1,3 @@
-function Deck(swampPip, forestPip, islandPip, mountainPip, plainsPip) {
-  this.swampPip = swampPip;
-  this.forestPip = forestPip;
-  this.islandPip = islandPip;
-  this.mountainPip = mountainPip;
-  this.plainsPip = plainsPip;
-}
-
-
 const submit = document.querySelector("#submit");
 submit.addEventListener("click", submitCalc);
 
@@ -20,17 +11,24 @@ function displayTotal(total) {
   pipDisplay.innerHTML = "Total Pips : " + total;
 }
 
+function cardsNeeded(pip, total, required) {
+  let numberOfCards = Math.ceil(pip/total*required);
+
+  return numberOfCards;
+}
+
 function submitCalc(event) {
   event.preventDefault();
   document.getElementsByClassName("pipCount");
-  let swampPip = parseInt(swampPipCount.value);
-  let forestPip = parseInt(forestPipCount.value);
-  let islandPip = parseInt(islandPipCount.value);
-  let mountainPip = parseInt(mountainPipCount.value);
-  let plainsPip = parseInt(plainsPipCount.value);
-  let newDeck = new Deck(swampPip, forestPip, islandPip, mountainPip, plainsPip);
-  let total = sumPips(swampPip, forestPip, islandPip, mountainPip, plainsPip);
-  console.log(newDeck);
+  let swampPip = parseFloat(swampPipCount.value);
+  let forestPip = parseFloat(forestPipCount.value);
+  let islandPip = parseFloat(islandPipCount.value);
+  let mountainPip = parseFloat(mountainPipCount.value);
+  let plainsPip = parseFloat(plainsPipCount.value);
+  let required = parseFloat(requiredCount.value);
+  let total = parseFloat(sumPips(swampPip, forestPip, islandPip, mountainPip, plainsPip));
+  
+  console.log(cardsNeeded(swampPip, total, required));
   displayTotal(total);
 }
 

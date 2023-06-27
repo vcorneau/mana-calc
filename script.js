@@ -6,6 +6,16 @@ function sumPips(swampPip, forestPip, islandPip, mountainPip, plainsPip) {
   return total;
 }
 
+function percentage(pipCount, pipTotal) {
+  let percentage = Math.floor(pipCount/pipTotal*100);
+  return percentage;
+}
+
+function displayPercentage(landPercentage, typeId) {
+  const percentageDisplay = document.getElementById(typeId);
+  percentageDisplay.innerHTML = landPercentage + " %"
+}
+
 function displayTotal(total) {
   const pipDisplay = document.getElementById("totalPip");
   pipDisplay.innerHTML = "Total Pips : " + total;
@@ -32,6 +42,18 @@ function submitCalc(event) {
   let plainsPip = parseFloat(plainsPipCount.value);
   let required = parseFloat(requiredCount.value);
   let total = parseFloat(sumPips(swampPip, forestPip, islandPip, mountainPip, plainsPip));
+
+  let swampPercentage = percentage(swampPip, total);
+  let forestPercentage = percentage(forestPip, total);
+  let islandPercentage = percentage(islandPip, total);
+  let mountainPercentage = percentage(mountainPip, total);
+  let plainsPercentage = percentage(plainsPip, total);
+
+  displayPercentage(swampPercentage, "swampPercentage");
+  displayPercentage(forestPercentage, "forestPercentage");
+  displayPercentage(islandPercentage, "islandPercentage");
+  displayPercentage(mountainPercentage, "mountainPercentage");
+  displayPercentage(plainsPercentage, "plainsPercentage");
 
   let swampCards = cardsNeeded(swampPip, total, required);
   let forestCards = cardsNeeded(forestPip, total, required);

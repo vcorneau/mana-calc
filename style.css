@@ -1,3 +1,40 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: min(max(20px, calc(1.25rem + ((1vw - 3.75px) * 1.2945))), 40px);
+  min-height: 0vw;
+  background-color: #253439;
+  color: #edf1f4;
+}
+
+.container,
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: min(max(50px, calc(3.125rem + ((1vw - 3.75px) * 6.4725))), 150px);
+  min-height: 0vw;
+  margin-top: 4rem;
+
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.main,
+.mana-results {
+  display: flex;
+  flex-direction: row;
+}
+
 .mana {
   display: flex;
   justify-content: left;
@@ -7,13 +44,13 @@
 }
 
 .icons {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
 }
 
 .pipCount {
-  height: 30px;
-  width: 60px;
+  height: 40px;
+  width: 80px;
   border-radius: 20px;
   margin: 10px;
 }

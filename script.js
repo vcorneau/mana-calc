@@ -13,17 +13,12 @@ function percentage(pipCount, pipTotal) {
 
 function displayPercentage(landPercentage, typeId) {
   const percentageDisplay = document.getElementById(typeId);
-  percentageDisplay.innerHTML = landPercentage + " %"
-}
-
-function displayTotal(total) {
-  const pipDisplay = document.getElementById("totalPip");
-  pipDisplay.innerHTML = "Total Pips : " + total;
+  percentageDisplay.innerHTML = landPercentage + "%";
 }
 
 function displayCardsRequired(type, typeId) {
   const cardsRequired = document.getElementById(typeId);
-  cardsRequired.innerHTML = "Cards required : " + type;
+  cardsRequired.innerHTML = type;
 }
 
 function cardsNeeded(pip, total, required) {
@@ -66,6 +61,5 @@ function submitCalc(event) {
   displayCardsRequired(islandCards, "islandRequired");
   displayCardsRequired(mountainCards, "mountainRequired");
   displayCardsRequired(plainsCards, "plainsRequired");
-  displayTotal(total);
 }
 

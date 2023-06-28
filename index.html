@@ -4,48 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Montserrat&display=swap" rel="stylesheet">
   <script src="script.js" defer></script>
   <title>Mana Calc</title>
 </head>
 <body>
   <div class="container">
-    <div class="mana" id="swamp">
-      <img src="./images/mana/swamp.svg" class="icons">
-      <input class="pipCount" id="swampPipCount" type="number">
-      <div class="cardsPercentage" id="swampPercentage"> </div>
-      <div class="cardsRequired" id="swampRequired"> </div>
-    </div>
-    <div class="mana" id="island">
-      <img src="./images/mana/island.svg" class="icons">
-      <input class="pipCount" id="islandPipCount" type="number">
-      <div class="cardsPercentage" id="islandPercentage"> </div>
-      <div class="cardsRequired" id="islandRequired"> </div>
-    </div>
-    <div class="mana" id="forest">
-      <img src="./images/mana/forest.svg" class="icons">
-      <input class="pipCount" id="forestPipCount" type="number">
-      <div class="cardsPercentage" id="forestPercentage"> </div>
-      <div class="cardsRequired" id="forestRequired"> </div>
-    </div>
-    <div class="mana" id="mountain">
-      <img src="./images/mana/mountain.svg" class="icons">
-      <input class="pipCount" id="mountainPipCount" type="number">
-      <div class="cardsPercentage" id="mountainPercentage"> </div>
-      <div class="cardsRequired" id="mountainRequired"> </div>
-    </div>
-    <div class="mana" id="plains">
-      <img src="./images/mana/plains.svg" class="icons">
-      <input class="pipCount" id="plainsPipCount" type="number">
-      <div class="cardsPercentage" id="plainsPercentage"> </div>
-      <div class="cardsRequired" id="plainsRequired"> </div>
-    </div>
-    <div class="mana" id="required">
-      <div>Required mana count</div>
-      <input class="pipCount" id="requiredCount" type="number">
-    </div>
-    <div class="mana" id="totals">
-      <div class="pipCount" id="totalPip"> </div>
-    <button class="submit" id="submit">Submit</button>
+    <div class="logo">MANAMATHICS</div>
+    <div class="calculator">
+      <div class="explainer" id="stepOneEx">How many basic lands do you want to add? </div>
+      <div class="mana" id="required">
+        <input class="pipCount" id="requiredCount" type="number">
+      </div>
+
+      <div class="explainer" id="stepTwoEx">Count the mana symbols at the top of your cards. </br>How many are there of each colour?</div>
+      <div class="header">Cards needed</div>
+      <div class="main">
+        <div class="input">
+          <div class="mana" id="swamp">
+            <img src="./images/mana/swamp.svg" class="icons">
+            <input class="pipCount" id="swampPipCount" type="number">
+          </div>
+          <div class="mana" id="island">
+            <img src="./images/mana/island.svg" class="icons">
+            <input class="pipCount" id="islandPipCount" type="number">
+          </div>
+          <div class="mana" id="forest">
+            <img src="./images/mana/forest.svg" class="icons">
+            <input class="pipCount" id="forestPipCount" type="number">
+          </div>
+          <div class="mana" id="mountain">
+            <img src="./images/mana/mountain.svg" class="icons">
+            <input class="pipCount" id="mountainPipCount" type="number">
+          </div>
+          <div class="mana" id="plains">
+            <img src="./images/mana/plains.svg" class="icons">
+            <input class="pipCount" id="plainsPipCount" type="number">
+          </div>
+        </div>
+
+        <div class="results">
+          <div class="manaResults" id="swampResults">
+            <div class="cardsPercentage" id="swampPercentage"> </div>
+            <div class="cardsRequired" id="swampRequired"> </div>
+          </div>
+          <div class="manaResults" id="islandResults">
+            <div class="cardsPercentage" id="islandPercentage"> </div>
+            <div class="cardsRequired" id="islandRequired"> </div>
+          </div>
+          <div class="manaResults" id="forestResults">
+            <div class="cardsPercentage" id="forestPercentage"> </div>
+            <div class="cardsRequired" id="forestRequired"> </div>
+          </div>
+          <div class="manaResults" id="mountainResults">
+            <div class="cardsPercentage" id="mountainPercentage"> </div>
+            <div class="cardsRequired" id="mountainRequired"> </div>
+          </div>
+          <div class="manaResults" id="plainsResults">
+            <div class="cardsPercentage" id="plainsPercentage"> </div>
+            <div class="cardsRequired" id="plainsRequired"> </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="submit" id="submit">Submit</button>
     </div>
 
   </div>

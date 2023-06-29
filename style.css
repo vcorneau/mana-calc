@@ -6,8 +6,7 @@ body {
   color: #edf1f4;
 }
 
-.container,
-.input {
+.container{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,10 +28,15 @@ body {
   margin-right: 2rem;
 }
 
-.main,
-.mana-results {
-  display: flex;
-  flex-direction: row;
+.explainer {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 200px;
+  column-gap: 100px;
 }
 
 .mana {
@@ -40,7 +44,6 @@ body {
   justify-content: left;
   align-items: center;
   margin: 5px;
-
 }
 
 .icons {
@@ -53,4 +56,9 @@ body {
   width: 80px;
   border-radius: 20px;
   margin: 10px;
+}
+
+.mana-results {
+  display: flex;
+  flex-direction: row;
 }

@@ -1,6 +1,6 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  font-size: min(max(20px, calc(1.25rem + ((1vw - 3.75px) * 1.2945))), 40px);
+  font-size: min(max(15px, calc(1.25rem + ((1vw - 3.75px) * 1.2945))), 40px);
   min-height: 0vw;
   background-color: #253439;
   color: #edf1f4;
@@ -10,55 +10,104 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
 .logo {
   font-family: 'Hammersmith One', sans-serif;
-  font-size: min(max(50px, calc(3.125rem + ((1vw - 3.75px) * 6.4725))), 150px);
+  font-size: min(max(40px, calc(3.125rem + ((1vw - 3.75px) * 6.4725))), 150px);
   min-height: 0vw;
   margin-top: 4rem;
 
 }
 
 .calculator {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 350px, 150px, 350px;
+  grid-template-rows: repeat(6, auto);
   margin-left: 2rem;
   margin-right: 2rem;
 }
 
-.explainer {
+#stepOneEx {
   margin-top: 10px;
   margin-bottom: 10px;
+  grid-column: 1 / 4;
+  grid-row: 1;
+}
+
+#required {
+  grid-column: 2;
+  grid-row: 2;
+  justify-items: center;
+}
+
+#stepTwoEx {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  grid-column: 1 / 4;
+  grid-row: 3;
 }
 
 .main {
+  grid-column: 1 / 4;
+  grid-row: 5;
   display: grid;
-  grid-template-columns: 200px;
-  column-gap: 100px;
+  grid-template-columns: 150px 150px;
+  column-gap: 10px;
+}
+.input {
+  grid-column: 1;
+  grid-row: 1 / 5;
+  display: grid;
+  grid-template-rows: repeat(5, 50px);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.results {
+  display: grid;
+  justify-items: left;
+  align-items: center;
+  grid-column: 2;
+  display: grid;
+  grid-template-rows: repeat(5, 50px);
 }
 
 .mana {
   display: flex;
-  justify-content: left;
+  justify-content: right;
   align-items: center;
   margin: 5px;
-}
-
-.icons {
-  height: 40px;
-  width: 40px;
-}
-
-.pipCount {
-  height: 40px;
-  width: 80px;
-  border-radius: 20px;
-  margin: 10px;
 }
 
 .mana-results {
   display: flex;
   flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  font-size: min(max(10px, calc(1.25rem + ((1vw - 3.75px) * 1.2945))), 15px);
+}
+
+.icons {
+  height: 30px;
+  width: 30px;
+}
+
+.pipCount {
+  height: 30px;
+  width: 50px;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+
+.submit {
+  grid-column: 2;
+  grid-row: 6;
+  color: #edf1f4;
+  border: #253439, 1px, solid;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  margin: 10px;
 }

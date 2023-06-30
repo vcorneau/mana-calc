@@ -16,9 +16,9 @@ function displayPercentage(landPercentage, typeId) {
   percentageDisplay.innerHTML = landPercentage + "%";
 }
 
-function displayCardsRequired(type, typeId) {
+function displayCardsRequired(type, typeId, typeName) {
   const cardsRequired = document.getElementById(typeId);
-  cardsRequired.innerHTML = type;
+  cardsRequired.innerHTML = type + " " + typeName;
 }
 
 function cardsNeeded(pip, total, required) {
@@ -38,17 +38,17 @@ function submitCalc(event) {
   let required = parseFloat(requiredCount.value);
   let total = parseFloat(sumPips(swampPip, forestPip, islandPip, mountainPip, plainsPip));
 
-  let swampPercentage = percentage(swampPip, total);
+  /*let swampPercentage = percentage(swampPip, total);
   let forestPercentage = percentage(forestPip, total);
   let islandPercentage = percentage(islandPip, total);
   let mountainPercentage = percentage(mountainPip, total);
-  let plainsPercentage = percentage(plainsPip, total);
+  let plainsPercentage = percentage(plainsPip, total);*/
 
-  displayPercentage(swampPercentage, "swampPercentage");
+  /*displayPercentage(swampPercentage, "swampPercentage");
   displayPercentage(forestPercentage, "forestPercentage");
   displayPercentage(islandPercentage, "islandPercentage");
   displayPercentage(mountainPercentage, "mountainPercentage");
-  displayPercentage(plainsPercentage, "plainsPercentage");
+  displayPercentage(plainsPercentage, "plainsPercentage");*/
 
   let swampCards = cardsNeeded(swampPip, total, required);
   let forestCards = cardsNeeded(forestPip, total, required);
@@ -56,10 +56,10 @@ function submitCalc(event) {
   let mountainCards = cardsNeeded(mountainPip, total, required);
   let plainsCards = cardsNeeded(plainsPip, total, required);
   
-  displayCardsRequired(swampCards, "swampRequired");
-  displayCardsRequired(forestCards, "forestRequired");
-  displayCardsRequired(islandCards, "islandRequired");
-  displayCardsRequired(mountainCards, "mountainRequired");
-  displayCardsRequired(plainsCards, "plainsRequired");
+  displayCardsRequired(swampCards, "swampRequired", "swamps");
+  displayCardsRequired(forestCards, "forestRequired", "forests");
+  displayCardsRequired(islandCards, "islandRequired", "islands");
+  displayCardsRequired(mountainCards, "mountainRequired", "mountains");
+  displayCardsRequired(plainsCards, "plainsRequired", "plains");""
 }
 

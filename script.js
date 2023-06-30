@@ -13,12 +13,20 @@ function percentage(pipCount, pipTotal) {
 
 function displayPercentage(landPercentage, typeId) {
   const percentageDisplay = document.getElementById(typeId);
-  percentageDisplay.innerHTML = landPercentage + "%";
+  if (landPercentage > 0) {
+    percentageDisplay.innerHTML = landPercentage + "%";
+  } else {
+    percentageDisplay.innerHTML = " ";
+  }
 }
 
 function displayCardsRequired(type, typeId, typeName) {
   const cardsRequired = document.getElementById(typeId);
-  cardsRequired.innerHTML = type + " " + typeName;
+  if (type > 0) {
+    cardsRequired.innerHTML = type + " " + typeName;
+  } else {
+    cardsRequired.innerHTML = " ";
+  }
 }
 
 function cardsNeeded(pip, total, required) {
@@ -38,17 +46,17 @@ function submitCalc(event) {
   let required = parseFloat(requiredCount.value);
   let total = parseFloat(sumPips(swampPip, forestPip, islandPip, mountainPip, plainsPip));
 
-  /*let swampPercentage = percentage(swampPip, total);
+  let swampPercentage = percentage(swampPip, total);
   let forestPercentage = percentage(forestPip, total);
   let islandPercentage = percentage(islandPip, total);
   let mountainPercentage = percentage(mountainPip, total);
-  let plainsPercentage = percentage(plainsPip, total);*/
+  let plainsPercentage = percentage(plainsPip, total);
 
-  /*displayPercentage(swampPercentage, "swampPercentage");
+  displayPercentage(swampPercentage, "swampPercentage");
   displayPercentage(forestPercentage, "forestPercentage");
   displayPercentage(islandPercentage, "islandPercentage");
   displayPercentage(mountainPercentage, "mountainPercentage");
-  displayPercentage(plainsPercentage, "plainsPercentage");*/
+  displayPercentage(plainsPercentage, "plainsPercentage");
 
   let swampCards = cardsNeeded(swampPip, total, required);
   let forestCards = cardsNeeded(forestPip, total, required);
@@ -62,4 +70,3 @@ function submitCalc(event) {
   displayCardsRequired(mountainCards, "mountainRequired", "mountains");
   displayCardsRequired(plainsCards, "plainsRequired", "plains");""
 }
-

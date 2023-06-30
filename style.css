@@ -76,16 +76,16 @@ body {
 
 .mana {
   display: flex;
-  justify-content: right;
-  align-items: center;
+  justify-content: center;
+  align-items: right
   margin: 5px;
 }
 
-.mana-results {
+.manaResults {
   display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
   font-size: min(max(10px, calc(1.25rem + ((1vw - 3.75px) * 1.2945))), 15px);
 }
 
